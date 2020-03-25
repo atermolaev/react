@@ -1,2 +1,1 @@
-# react
-ReactJS APP
+# Проект на ReactJS
