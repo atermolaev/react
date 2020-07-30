@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.styl'
 
 class SideBar extends React.Component {
     render(){
-        return (<div>SideBar</div>)
+        return (<div className="sidebar">SideBar</div>)
     }
 }
 
