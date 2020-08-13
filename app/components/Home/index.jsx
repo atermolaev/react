@@ -7,7 +7,7 @@ class Home extends React.Component {
         super(props)
 
         this.state = {
-            data: ''
+            data: []
         }
     }
 
@@ -17,16 +17,26 @@ class Home extends React.Component {
 
     getData = async () => {
         let res = await axios.get('/data.json');
-        this.setState({data: JSON.stringify(res.data)});
+        this.setState({data: res.data});
     }
 
     render(){
         let { data } = this.state
+        const itemStyle = {
+            marginBottom: '20px',
+        }
 
         return (
             <div>
-                <div>Home</div>
-                <div>{data}</div>
+                <div>Home. Список храмов Ростова-на-Дону.</div>                
+                <div>{data.map((item) => {
+                    return (<div style={itemStyle}>
+                        <ul>
+                            <li>{item.name}</li>
+                            <li>{item.address}</li>
+                        </ul>
+                    </div>)
+                })}</div>
             </div>
         )
     }
