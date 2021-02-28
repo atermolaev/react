@@ -15,28 +15,14 @@ class Home extends React.Component {
         this.getData();
     }
 
-    getData = async () => {
-        let res = await axios.get('/data.json');
-        this.setState({data: res.data});
+    getData = () => {
     }
 
     render(){
-        let { data } = this.state
-        const itemStyle = {
-            marginBottom: '20px',
-        }
-
         return (
             <div>
                 <div>Home. Список храмов Ростова-на-Дону.</div>                
-                <div>{data.map((item) => {
-                    return (<div style={itemStyle}>
-                        <ul>
-                            <li>{item.name}</li>
-                            <li>{item.address}</li>
-                        </ul>
-                    </div>)
-                })}</div>
+                <div>123</div>
             </div>
         )
     }
