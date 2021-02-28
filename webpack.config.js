@@ -2,7 +2,10 @@ var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: './app/index.jsx',
+    entry: {
+        polyfill: 'babel-polyfill',
+        app: './app/index.jsx',
+    },
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
@@ -19,7 +22,8 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loader: "babel-loader",   // определяем загрузчик
                 options:{
-                    presets: ["@babel/preset-env", "@babel/preset-react"]   // используемые плагины
+                    presets: ["@babel/preset-env", "@babel/preset-react",{
+                        'plugins': ['@babel/plugin-proposal-class-properties']}]   // используемые плагины
                 }
             },
             {
