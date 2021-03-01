@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import 'babel-polyfill';
 
 class Home extends React.Component {
     constructor(props){
