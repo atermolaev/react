@@ -11,10 +11,10 @@ import App from './components/App/App.jsx'
 sagaMiddleware.run(saga);
 
 ReactDOM.render(
-  <Provider store={store}>
     <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>, 
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>, 
   document.getElementById('app')
 );
