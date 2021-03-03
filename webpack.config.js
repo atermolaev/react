@@ -4,17 +4,12 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     devtool: "source-map",
     entry: {
-        polyfill: 'babel-polyfill',
+        // polyfill: 'babel-polyfill',
         app: './app/index.jsx',
     },
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
-    },
-    devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        compress: true,
-        port: 9000
     },
     module: {
         rules: [
@@ -39,6 +34,11 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin({filename: "styles.css"}),
     ],
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 9000
+    },
     resolve: {
         extensions: ['.js', '.jsx'],
     },
