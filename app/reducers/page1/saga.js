@@ -9,9 +9,9 @@ import {
 
 function* moneyCource(){
     try{
-        const result = yield call(getMoneyCource());
+        const result = yield call(getMoneyCource);
 
-        yield put(moneyCourceSuccess(result));
+        yield put(moneyCourceSuccess(result.data));
     } catch(error) {
         yield put(moneyCourceFailure(error));
     }
