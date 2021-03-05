@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Button } from '@material-ui/core';
 
-import { moneyCourceRequest } from '../../reducers/page1/actions';
+import { moneyCourceRequest } from '../../ducks/page1/actions';
 
 const handleClick = dispatch => () => {
     dispatch(moneyCourceRequest());
