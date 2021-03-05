@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import { sagaMiddleware } from './store'
@@ -11,10 +10,8 @@ import App from './components/App/App.jsx'
 sagaMiddleware.run(saga);
 
 ReactDOM.render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>, 
+    <Provider store={store}>
+      <App />
+    </Provider>,
   document.getElementById('app')
 );

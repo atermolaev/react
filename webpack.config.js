@@ -9,7 +9,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -37,7 +38,8 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'public'),
         compress: true,
-        port: 9000
+        port: 9000,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: ['.js', '.jsx'],
