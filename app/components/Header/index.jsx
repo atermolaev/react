@@ -4,14 +4,14 @@ import './style.styl';
 
 class Header extends React.Component {
     render(){
-        return (<div>
-            <div className="logo">Логотип</div>
+        return (
+        <React.Fragment>
             <ul className="menu">
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/page1'>Page1</Link></li>
                 <li><Link to='/page2'>Page2</Link></li>
             </ul>
-        </div>)
+        </React.Fragment>)
     }
 }
 
