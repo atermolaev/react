@@ -14,28 +14,26 @@ class App extends React.Component {
     render(){
       return (
         <Router>
-          <React.Fragment>
-            <Container maxWidth={false}>
-              <Grid container spacing={3}>
-                <Grid item xs={2}>
-                  <Logo />
-                </Grid>
-                <Grid item xs={10}>
-                  <Header />
-                </Grid>
-                <Grid item xs={2}>
-                  <SideBar />
-                </Grid>
-                <Grid item xs={10}>
-                  <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/page1" component={Page1} />
-                    <Route path="/page2" component={Page2} />
-                  </Switch>
-                </Grid>
+          <Container maxWidth={false}>
+            <Grid container spacing={3}>
+              <Grid item xs={2}>
+                <Logo />
               </Grid>
-            </Container>
-          </React.Fragment>
+              <Grid item xs={10}>
+                <Header />
+              </Grid>
+              <Grid item xs={2}>
+                <SideBar />
+              </Grid>
+              <Grid item xs={10}>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/page1" component={Page1} />
+                  <Route path="/page2" component={Page2} />
+                </Switch>
+              </Grid>
+            </Grid>
+          </Container>
         </Router>
       )
     }
