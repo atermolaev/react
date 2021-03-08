@@ -4,7 +4,6 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     devtool: "source-map",
     entry: {
-        // polyfill: 'babel-polyfill',
         app: './app/index.jsx',
     },
     output: {
@@ -27,7 +26,19 @@ module.exports = {
                 test: /\.(css|styl)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader", "stylus-loader"]
+                    use: [
+                        {
+                            loader: "css-loader",
+                            options:{
+                                sourceMap: true,
+                                importLoaders: 2,
+                                modules: {
+                                    localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                                }
+                            }
+                        },
+                        "stylus-loader"
+                    ]
                 })
             },
         ]

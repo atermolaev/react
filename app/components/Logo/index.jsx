@@ -1,8 +1,8 @@
 import React from 'react';
-import './style.styl';
+import styles from './style.css';
 
 function Logo(){
-    return <div className="logo">Логотип</div>
+    return <div className={styles.logo}>Логотип</div>
 }
 
 export default Logo;
